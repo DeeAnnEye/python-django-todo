@@ -1,0 +1,9 @@
+{% if todo_list %}
+    <ul>
+    {% for task in todo_list %}
+        <li><a href="#">{{ task.task_text }}</a></li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No tasks to do.</p>
+{% endif %}
