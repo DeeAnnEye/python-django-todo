@@ -1,9 +1,11 @@
 {% if todo_list %}
     <ul>
     {% for task in todo_list %}
-        <li><a href="#">{{ task.task_text }}</a></li>
+        <li>{{ task.task_text }}</li>
     {% endfor %}
     </ul>
+    <br />
+    <a href="{% url 'todo:addtask' %}"><button>Add Task</button></a>
 {% else %}
     <p>No tasks to do.</p>
 {% endif %}

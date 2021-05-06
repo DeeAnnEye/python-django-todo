@@ -17,4 +17,7 @@ def tasks(request):
     # }
     # return HttpResponse(template.render(context, request))
     context = {'todo_list': todo_list}
-    return render(request, 'todo/index.html', context)
+    return render(request, 'todo/tasks.html', context)
+
+def addtask(request):
+    return render(request, 'todo/addtask.html')
