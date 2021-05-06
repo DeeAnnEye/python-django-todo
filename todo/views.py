@@ -7,7 +7,7 @@ from django.shortcuts import render
 from .models import Task
 
 def index(request):
-    return HttpResponse("Hello, world. You're at the todo index.")
+    return render(request, 'todo/index.html')
 
 def tasks(request):
     todo_list = Task.objects.order_by('-task_date')[:5]
