@@ -12,7 +12,10 @@
 <html>
   {% load static %}
   <head>
-    <link rel="stylesheet" href="{%  static  'css/style.css'  %}" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="{%  static  'css/style.css'  %}" >
+
     <title>Todo App</title>
   </head>
   <div class="row">
@@ -34,17 +37,19 @@
   </div>
   <div class="row">
     <div class="col-md-12">
+      {% if todo_list %}
       <div class="main-todo-input-wrap">
-        {% if todo_list %} {% for task in todo_list %}
+        {% for task in todo_list %}
         <div class="main-todo-input fl-wrap">
           <ul id="list-items">
             <div class="todo-listing">
-              <li class="todo-text">{{ task.task_text }}</li>
+              <li class="todo-text">{{ task.task_text }} <i class="fas fa-trash-alt remove"></i></li>
             </div>
           </ul>
         </div>
-          {% endfor %} {% endif %}        
+          {% endfor %}     
       </div>
+      {% endif %}    
     </div>
   </div>
 </html>
