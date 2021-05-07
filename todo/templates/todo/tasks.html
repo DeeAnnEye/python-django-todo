@@ -10,44 +10,41 @@
     <p>No tasks to do.</p>
 {% endif %} -->
 <html>
-    {% load static %}
-<head>
-    <link rel="stylesheet"  href="{%  static  'css/style.css'  %}">
+  {% load static %}
+  <head>
+    <link rel="stylesheet" href="{%  static  'css/style.css'  %}" />
     <title>Todo App</title>
   </head>
-<div class="row">
-  <div class="col-md-12">
-    <h2>Things To Do...</h2>
-    <div class="main-todo-input-wrap">
-      <div class="main-todo-input fl-wrap">
-        <div class="main-todo-input-item">
-          <input
-            type="text"
-            id="todo-list-item"
-            placeholder="What will you do today?"
-          />
-        </div>
-        <button class="add-items main-search-button">ADD</button>
-      </div>
-    </div>
-  </div>
-</div>
-<div class="row">
-  <div class="col-md-12">
-    <div class="main-todo-input-wrap">
-      <div class="main-todo-input fl-wrap">
-        {% if todo_list %}
-        <ul id="list-items">
-          {% for task in todo_list %}
-          <div class="todo-listing">
-          <li class="todo-text">
-              {{ task.task_text }}</li>
+  <div class="row">
+    <div class="col-md-12">
+      <h2>Things To Do...</h2>
+      <div class="main-todo-input-wrap">
+        <div class="main-todo-input fl-wrap">
+          <div class="main-todo-input-item">
+            <input
+              type="text"
+              id="todo-list-item"
+              placeholder="What will you do today?"
+            />
           </div>
-          {% endfor %}
-        </ul>
-        {% endif %}
+          <button class="add-items main-search-button">ADD</button>
+        </div>
       </div>
     </div>
   </div>
-</div>
+  <div class="row">
+    <div class="col-md-12">
+      <div class="main-todo-input-wrap">
+        {% if todo_list %} {% for task in todo_list %}
+        <div class="main-todo-input fl-wrap">
+          <ul id="list-items">
+            <div class="todo-listing">
+              <li class="todo-text">{{ task.task_text }}</li>
+            </div>
+          </ul>
+        </div>
+          {% endfor %} {% endif %}        
+      </div>
+    </div>
+  </div>
 </html>
