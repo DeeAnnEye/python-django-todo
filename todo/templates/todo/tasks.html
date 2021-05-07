@@ -1,4 +1,4 @@
-{% if todo_list %}
+<!-- {% if todo_list %}
     <ul>
     {% for task in todo_list %}
         <li>{{ task.task_text }}</li>
@@ -8,4 +8,42 @@
     <a href="{% url 'todo:addtask' %}"><button>Add Task</button></a>
 {% else %}
     <p>No tasks to do.</p>
-{% endif %}
+{% endif %} -->
+<html>
+    {% load static %}
+<head>
+    <link rel="stylesheet"  href="{%  static  'css/style.css'  %}">
+    <title>Todo App</title>
+  </head>
+<div class="row">
+  <div class="col-md-12">
+    <div class="main-todo-input-wrap">
+      <div class="main-todo-input fl-wrap">
+        <div class="main-todo-input-item">
+          <input
+            type="text"
+            id="todo-list-item"
+            placeholder="What will you do today?"
+          />
+        </div>
+        <button class="add-items main-search-button">ADD</button>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-12">
+    <div class="main-todo-input-wrap">
+      <div class="main-todo-input fl-wrap todo-listing">
+        {% if todo_list %}
+        <ul id="list-items">
+          {% for task in todo_list %}
+          <li class="todo-text">{{ task.task_text }}</li>
+          {% endfor %}
+        </ul>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</div>
+</html>
