@@ -17,6 +17,7 @@
   </head>
 <div class="row">
   <div class="col-md-12">
+    <h2>Things To Do...</h2>
     <div class="main-todo-input-wrap">
       <div class="main-todo-input fl-wrap">
         <div class="main-todo-input-item">
@@ -34,11 +35,14 @@
 <div class="row">
   <div class="col-md-12">
     <div class="main-todo-input-wrap">
-      <div class="main-todo-input fl-wrap todo-listing">
+      <div class="main-todo-input fl-wrap">
         {% if todo_list %}
         <ul id="list-items">
           {% for task in todo_list %}
-          <li class="todo-text">{{ task.task_text }}</li>
+          <div class="todo-listing">
+          <li class="todo-text">
+              {{ task.task_text }}</li>
+          </div>
           {% endfor %}
         </ul>
         {% endif %}
