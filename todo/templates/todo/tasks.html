@@ -1,14 +1,4 @@
-<!-- {% if todo_list %}
-    <ul>
-    {% for task in todo_list %}
-        <li>{{ task.task_text }}</li>
-    {% endfor %}
-    </ul>
-    <br />
-    <a href="{% url 'todo:addtask' %}"><button>Add Task</button></a>
-{% else %}
-    <p>No tasks to do.</p>
-{% endif %} -->
+
 <html>
   {% load static %}
   <head>
@@ -24,13 +14,23 @@
       <div class="main-todo-input-wrap">
         <div class="main-todo-input fl-wrap">
           <div class="main-todo-input-item">
-            <input
+            <form action = "" method = "POST">
+              {% csrf_token %} 
+              <input
+            type="text"
+            id="todo-list-item"
+            name="todo-task"
+            placeholder="What will you do today?"
+          />
+            <!-- <input
               type="text"
               id="todo-list-item"
-              placeholder="What will you do today?"
-            />
+              name="todo-date"
+              placeholder="When are you going to do it?"
+            />             -->
           </div>
-          <button class="add-items main-search-button">ADD</button>
+          <button id="submit" type="submit" class="add-items main-search-button">ADD</button>
+        </form>
         </div>
       </div>
     </div>
@@ -43,9 +43,7 @@
         <div class="main-todo-input fl-wrap">
           <ul id="list-items">
             <div class="todo-listing">
-              <li class="todo-text">{{ task.task_text }} 
-               <a href="#"><i class="fas fa-trash remove"></i><i class="fas fa-check-circle taskcheck"></i></a>
-              </li>
+              <li class="todo-text">{{ task.task_text }}</li><li class="todo-date">{{ task.task_date }}</li><a href="#"><i class="fas fa-trash remove"></i><i class="fas fa-check-circle taskcheck"></i></a>              
             </div>
           </ul>
         </div>

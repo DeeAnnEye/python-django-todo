@@ -5,4 +5,4 @@ from django.db import models
 
 class Task(models.Model):
     task_text = models.CharField(max_length=200)
-    task_date = models.DateField('task date')
+    task_date = models.CharField(max_length=200)

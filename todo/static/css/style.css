@@ -67,6 +67,8 @@ body {
 }
 
 .main-todo-input-wrap {
+  display: flex;
+  flex-direction: column;
   max-width: 500px;
   margin: 30px auto;
   position: relative;
@@ -117,11 +119,13 @@ i:hover {
 
 .remove {
   float: right;
+  /* justify-content:right; */
   color: #f00f0f !important;
   font-size: 14px;
 }
 .taskcheck {
   float: right;
+  /* justify-content: right; */
   color: #2b850f !important;
   font-size: 14px;
 }
@@ -147,6 +151,9 @@ ul {
 
 .todo-listing {
   padding: 0px 29px 0 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
   margin-top: 25px !important;
 }
 

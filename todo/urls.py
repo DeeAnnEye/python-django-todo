@@ -7,6 +7,6 @@ urlpatterns = [
     path('', views.index, name='index'),
     # ex: /tasks/
     path('tasks/', views.tasks, name='tasks'),
-     # ex: /add_task/
-    path('addtask/', views.addtask, name='addtask'),
+    #  # ex: /add_task/
+    # path('addtask/', views.addtask, name='addtask'),
 ]
