@@ -11,8 +11,8 @@ def index(request):
 
 def tasks(request):
     todo_list = Task.objects.order_by('task_text')
-    for e in Task.objects.all():
-      print(e.task_date)
+    # for e in Task.objects.all():
+    #   print(e.task_date)
     # template = loader.get_template('todo/index.html')
     # context = {
     #     'todo_list': todo_list,
