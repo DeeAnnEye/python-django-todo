@@ -12,26 +12,16 @@
     <div class="col-md-12">
       <h2>Things To Do...</h2>
       <div class="main-todo-input-wrap">
-        <div class="main-todo-input fl-wrap">
-          <div class="main-todo-input-item">
+       <!-- <div class="main-todo-input fl-wrap">
+          <div class="main-todo-input-item"> -->
             <form action = "" method = "POST">
               {% csrf_token %} 
-              <input
-            type="text"
-            id="todo-list-item"
-            name="todo-task"
-            placeholder="What will you do today?"
-          />
-            <!-- <input
-              type="text"
-              id="todo-list-item"
-              name="todo-date"
-              placeholder="When are you going to do it?"
-            />             -->
-          </div>
-          <button id="submit" type="submit" class="add-items main-search-button">ADD</button>
+              <input type="text" class="form-control todo-task" id="exampleInputEmail1" placeholder="What are you going to do?">  
+              <input type="text" class="form-control todo-task" id="exampleInputEmail1" placeholder="When are you going to do?"> 
+            <button id="submit" type="submit" class=" add-task btn btn-primary">Add task</button>      
+          <!-- </div>           -->
         </form>
-        </div>
+        <!-- </div> -->
       </div>
     </div>
   </div>
