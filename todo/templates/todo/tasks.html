@@ -16,8 +16,8 @@
           <div class="main-todo-input-item"> -->
             <form action = "" method = "POST">
               {% csrf_token %} 
-              <input type="text" class="form-control todo-task" id="exampleInputEmail1" placeholder="What are you going to do?">  
-              <input type="text" class="form-control todo-task" id="exampleInputEmail1" placeholder="When are you going to do?"> 
+              <input type="text" class="form-control todo-task" name="task_text" id="exampleInputEmail1" placeholder="What are you going to do?">  
+              <input type="text" class="form-control todo-task" name="task_time" id="exampleInputEmail1" placeholder="When are you going to do?"> 
             <button id="submit" type="submit" class=" add-task btn btn-primary">Add task</button>      
           <!-- </div>           -->
         </form>

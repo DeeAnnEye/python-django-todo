@@ -19,6 +19,10 @@ def tasks(request):
     # }
     # return HttpResponse(template.render(context, request))
     # print(request.POST)
+    task_text = request.POST.get("task_text")
+    task_time = request.POST.get("task_time")
+    task = Task.objects.create(task_text=task_text, task_time=task_time)
+
     context = {'todo_list': todo_list}
     return render(request, 'todo/tasks.html', context)
 
