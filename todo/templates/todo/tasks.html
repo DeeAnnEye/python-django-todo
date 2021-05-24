@@ -17,7 +17,7 @@
             <form action = "" method = "POST">
               {% csrf_token %} 
               <input type="text" class="form-control todo-task" name="task_text" id="exampleInputEmail1" placeholder="What are you going to do?">  
-              <input type="text" class="form-control todo-task" name="task_time" id="exampleInputEmail1" placeholder="When are you going to do?"> 
+              <input type="text" class="form-control todo-task" name="task_time" id="exampleInputEmail2" placeholder="When are you going to do?"> 
             <button id="submit" type="submit" class=" add-task btn btn-primary">Add task</button>      
           <!-- </div>           -->
         </form>
@@ -33,7 +33,7 @@
         <div class="main-todo-input fl-wrap">
           <ul id="list-items">
             <div class="todo-listing">
-              <li class="todo-text">{{ task.task_name }}</li><li class="todo-text">{{ task.task_date }}</li><a href="#"><i class="fas fa-trash remove"></i><i class="fas fa-check-circle taskcheck"></i></a>              
+              <li class="todo-text">{{ task.task_name }}</li><li class="todo-text">{{ task.task_date }}</li><a href="#"><i id="{{task.id}}" name="remove" class="fas fa-trash remove"></i><i class="fas fa-check-circle taskcheck"></i></a>              
             </div>
           </ul>
         </div>

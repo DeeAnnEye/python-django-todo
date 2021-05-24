@@ -19,6 +19,9 @@ def tasks(request):
     # }
     # return HttpResponse(template.render(context, request))
     # print(request.POST)
+    # task_id= request.GET.get("id")
+    # print(task_id)
+
     task_text = request.POST.get("task_text")
     task_time = request.POST.get("task_time")
 
