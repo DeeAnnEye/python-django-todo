@@ -19,9 +19,10 @@ def tasks(request):
     # }
     # return HttpResponse(template.render(context, request))
     # print(request.POST)
-    if(request):
-        task_text = request.POST.get("task_text")
-        task_time = request.POST.get("task_time")
+    task_text = request.POST.get("task_text")
+    task_time = request.POST.get("task_time")
+
+    if(task_text and task_time != None):
         task = Task(task_name=task_text, task_date=task_time)
         task.save()
     
